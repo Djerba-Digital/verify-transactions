@@ -108,15 +108,22 @@ const run = async () => {
       console.log(`TRANSACTION ${_id} IS VALID`.green);
       console.log(`REASON : HASHES ARE EQUAL`.green);
 
+      //  CHECK IF DATA IS ALREADY IN DB
+      const isExist = await global.Log.findOne({
+        currentHash,
+      });
+
       //  SAVE TO DB
-      await global
-        .Log({
-          state,
-          prevHash,
-          currentHash,
-          timestamp,
-        })
-        .save();
+      if (!isExist) {
+        await global
+          .Log({
+            state,
+            prevHash,
+            currentHash,
+            timestamp,
+          })
+          .save();
+      }
 
       //  CONSOLE LOG
       console.log(`*******  TRANSACTION DATA ID ${state.data._id}`.cyan);
