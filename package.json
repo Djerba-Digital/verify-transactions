@@ -1,0 +1,19 @@
+{
+  "name": "verify-transactions",
+  "version": "1.0.0",
+  "description": "KafkaJs Verify Transactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "json-hash": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "kafkajs": "^2.2.4",
+    "mongoose": "^7.1.0"
+  }
+}
